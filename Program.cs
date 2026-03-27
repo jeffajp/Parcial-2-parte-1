@@ -181,3 +181,4 @@ class Equipo
    
    
 }
+// no se si realmente alla utilizado los parametros correctos
