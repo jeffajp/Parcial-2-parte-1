@@ -1,4 +1,6 @@
-﻿Dictionary<int, Equipo> equipos = new Dictionary<int, Equipo>();
+﻿using System.Security.Cryptography.X509Certificates;
+
+Dictionary<int, Equipo> equipos = new Dictionary<int, Equipo>();
 int opcion = 0;
 do
 {
@@ -97,12 +99,28 @@ do
             foreach(var item in equipos)
             {
                 Console.Write($"{item.Key} + {item.Value}");
+
             }
             Console.ReadLine();
             Console.Clear();
             break;
         case 6:
             Console.WriteLine("ingrese el codigo del equipo: ");
+            codigo = int.Parse(Console.ReadLine());
+            if(equipos.ContainsKey(codigo))
+            {
+                Equipo e = new Equipo();
+                Console.WriteLine("ingrese la cantidad de horas utilizadas del equipo: "); e.Hora = double.Parse(Console.ReadLine());
+                Console.WriteLine("ingrese el nuevo estado: "); e.Estado = Console.ReadLine();
+                Console.WriteLine("el subt total es:  ");
+                equipos[codigo] = e;
+
+                
+            }
+            else
+            {
+                Console.WriteLine("el equipo no existe: ");
+            }
             Console.ReadLine();
             Console.Clear();
             break;
@@ -159,23 +177,7 @@ class Equipo
     {
         Console.WriteLine($" codigo: {Codigo}--nombre: {Nombre}--Tipo: {Tipo}--costo por hora: {Hora}--Horas prestadas: {HorasPrestada()}--estado: {Estado}");
     }
-    /*public string Estado()
-    {
-        if (Hora > 0)
-        {
-            return "Prestado: ";
-        }
-        else if(Hora ==0)
-        {
-            return "Disponible: ";
-        }
-        else
-        {
-            return "Mantenimiento ";
-        }
-    
-    }
-    */
+   
    
    
 }
