@@ -22,7 +22,7 @@ do
         case 1:
             Console.WriteLine("ingrese el codigo del equipo a registrar: ");
             int codigo = int.Parse(Console.ReadLine());
-            if(!equipos.ContainsKey(codigo))
+            if (!equipos.ContainsKey(codigo))
             {
                 Equipo e = new Equipo();
                 Console.WriteLine("ingrese el nombre del equipo: "); e.Nombre = Console.ReadLine();
@@ -31,7 +31,7 @@ do
                 Console.WriteLine("ingrese las horas que utilizara el equipo: "); e.Hora = double.Parse(Console.ReadLine());
                 Console.WriteLine("Equipo registrado correctamente: ");
                 equipos.Add(codigo, e);
-                
+
             }
             else
             {
@@ -44,7 +44,7 @@ do
         case 2:
             Console.WriteLine("ingrese el codigo del equipo que desea modificar: ");
             codigo = int.Parse(Console.ReadLine());
-            if(equipos.ContainsKey(codigo))
+            if (equipos.ContainsKey(codigo))
             {
                 Equipo e = new Equipo();
                 Console.WriteLine("ingrese el nuevo nombre: "); e.Nombre = Console.ReadLine();
@@ -64,7 +64,7 @@ do
         case 3:
             Console.WriteLine("ingrese el codigo del equipo que desea eliminar: ");
             codigo = int.Parse(Console.ReadLine());
-            if(equipos.Remove(codigo))
+            if (equipos.Remove(codigo))
             {
                 Console.WriteLine("equipo eliminado: ");
 
@@ -77,18 +77,65 @@ do
             Console.Clear();
             break;
         case 4:
-
-
-
-
-            
-
+            Console.WriteLine("ingrese el codigo del equipo que desea buscar: ");
+            codigo = int.Parse(Console.ReadLine());
+            if(equipos.ContainsKey(codigo))
+            {
+                Console.WriteLine("el equipo es: ");
+                
+                
+            }
+            else
+            {
+                Console.WriteLine("el equipo no existe: ");
+            }
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 5:
+            Console.WriteLine("los equipos registrados son: ");
+            foreach(var item in equipos)
+            {
+                Console.Write($"{item.Key} + {item.Value}");
+            }
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 6:
+            Console.WriteLine("ingrese el codigo del equipo: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 7:
+            Console.WriteLine("ingrese el codigo del equipo a devolver: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 8:
+            Console.WriteLine("el total de equipos registrados son: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 9:
+            Console.WriteLine("los estados de los equipos son: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 10:
+            Console.WriteLine("los tipos de equipo son: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        case 11:
+            Console.WriteLine("gracias por utilizar el sistema: ");
+            Console.ReadLine();
+            Console.Clear();
+            break;
+        default:
+            Console.WriteLine("selecciono una opcion incorrecta: ");
+            break;
 
     }
-
-
-
-
 
 } while(opcion != 0);
 
@@ -129,5 +176,6 @@ class Equipo
     
     }
     */
+   
    
 }
